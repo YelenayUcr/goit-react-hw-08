@@ -1,0 +1,15 @@
+.item {
+    display: flex;
+    justify-content: space-between;
+    padding: 8px;
+    background-color: #eee;
+    margin-bottom: 8px;
+}
+
+.btn {
+    background-color: crimson;
+    color: white;
+    border: none;
+    padding: 4px 8px;
+    cursor: pointer;
+}
