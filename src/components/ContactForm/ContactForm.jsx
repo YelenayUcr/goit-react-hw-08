@@ -9,7 +9,7 @@ const ContactSchema = Yup.object().shape({
   name: Yup.string()
     .min(2, 'Name must be at least 2 characters')
     .required('Name is required'),
-  phone: Yup.string()
+    number: Yup.string()
     .matches(
       /^\+?[0-9\s-]{7,15}$/,
       'Phone number must be 7–15 digits and may include +, spaces or -'
@@ -23,7 +23,7 @@ const ContactForm = () => {
 
   return (
     <Formik
-      initialValues={{ name: '', phone: '' }}
+    initialValues={{ name: '', number: '' }}
       validationSchema={ContactSchema}
       onSubmit={(values, { resetForm, setFieldError }) => {
         const exists = contacts.some(
@@ -46,9 +46,9 @@ const ContactForm = () => {
           </div>
 
           <div className={css.field}>
-            <label htmlFor="phone">Phone</label>
-            <Field id="phone" name="phone" placeholder="e.g. +123456789" />
-            <ErrorMessage name="phone" component="div" className={css.error} />
+          <label htmlFor="number">Phone</label>
+<Field id="number" name="number" />
+<ErrorMessage name="number" component="div" />
           </div>
 
           <button type="submit" disabled={Object.keys(errors).length > 0}>
